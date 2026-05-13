@@ -1,0 +1,46 @@
+<main class="initial-container">
+  <div class="logo-circle">
+    <img 
+      [src]="perfil.foto" 
+      [alt]="perfil.nome"
+      class="profile-image"
+      loading="lazy"
+    />
+  </div>
+  
+  <div class="profile-text-section">
+    <h1 class="profile-name-main">{{ perfil.nome }}</h1>
+    <p class="profile-bio-main">{{ perfil.bio }}</p>
+    <p class="profile-tag-main">@{{ perfil.tag }}</p>
+  </div>
+
+    <div class="links-container">
+      @for (link of linksRapidos; track link.label) {
+        @if (link.url.startsWith('/')) {
+          <a 
+            [routerLink]="link.url"
+            class="neon-btn-link"
+            [attr.aria-label]="link.ariaLabel"
+          >
+            <span class="link-icon" [innerHTML]="getIcon(link.icon)"></span>
+            <span class="link-text">{{ link.label }}</span>
+          </a>
+        } @else {
+          <a 
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="neon-btn-link"
+            [attr.aria-label]="link.ariaLabel"
+          >
+            <span class="link-icon" [innerHTML]="getIcon(link.icon)"></span>
+            <span class="link-text">{{ link.label }}</span>
+          </a>
+        }
+      }
+    </div>
+
+  <footer class="initial-footer">
+    <p class="footer-note-text">{{ perfil.nota }}</p>
+  </footer>
+</main>

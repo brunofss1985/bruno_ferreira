@@ -1,0 +1,13 @@
+import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-site-footer',
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: './site-footer.html',
+  styleUrl: './site-footer.css'
+})
+export class SiteFooterComponent {
+  @Input() whatsappUrl = '';
+}

@@ -1,0 +1,181 @@
+@import '../secao-shared.css';
+
+:host {
+  display: block;
+}
+
+#servicos-section {
+  width: 100%;
+  min-height: 100svh;
+  height: 100svh;
+  margin-top: calc(-1 * var(--layout-gap));
+  background: linear-gradient(rgba(42, 42, 42, 0.88), rgba(42, 42, 42, 0.88)), url('/assets/img/servicos.svg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  box-shadow: inset 0 20px 60px rgba(0,0,0,0.8), inset 0 -20px 60px rgba(0,0,0,0.6);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.servicos-inner {
+  width: 100%;
+  max-width: 720px;
+  padding: 3rem 4rem;
+  text-align: center;
+}
+
+.servicos-kicker {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 1.5rem;
+}
+
+.servicos-heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  margin-bottom: 3rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: rgba(255,255,255,0.95);
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+}
+
+.service-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 3rem;
+  background:
+    linear-gradient(180deg, rgba(58,58,58,0.95), rgba(26,26,26,0.95)),
+    radial-gradient(circle at 70% 24%, rgba(255,255,255,0.09), rgba(255,255,255,0));
+  padding: 1.35rem 1.2rem 1.15rem;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5), 0 20px 40px -15px rgba(0,0,0,0.3);
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(110deg, rgba(255,255,255,0.1), rgba(255,255,255,0) 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.service-card-relative {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.icon-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255,255,255,0.06);
+  border-radius: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0.9rem;
+  transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.service-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+.service-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.6;
+}
+
+.service-card:hover {
+  border-color: rgba(255,255,255,0.18);
+  transform: translateY(-6px);
+  background:
+    linear-gradient(180deg, rgba(58,58,58,0.95), rgba(26,26,26,0.95)),
+    radial-gradient(circle at 70% 24%, rgba(255,255,255,0.09), rgba(255,255,255,0));
+  box-shadow: 0 50px 100px -25px rgba(0,0,0,0.6), 0 25px 50px -20px rgba(0,0,0,0.35);
+}
+
+.service-card:hover .card-gradient {
+  opacity: 1;
+}
+
+.service-card:hover .icon-container {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.26);
+  transform: translateX(3px);
+}
+
+.service-card:hover::before {
+  background: rgba(255,255,255,0.2);
+}
+
+.service-card:nth-child(1) {
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5), 0 20px 40px -15px rgba(0,0,0,0.3);
+}
+
+.service-card:nth-child(2) {
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5), 0 20px 40px -15px rgba(0,0,0,0.3);
+}
+
+.service-card:nth-child(3) {
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5), 0 20px 40px -15px rgba(0,0,0,0.3);
+}
+
+.service-card:nth-child(4) {
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5), 0 20px 40px -15px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 64rem) {
+  #servicos-section {
+    min-height: 100svh;
+    height: auto;
+    padding: 2rem 0;
+  }
+  .servicos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 52rem) {
+  #servicos-section {
+    min-height: 100svh;
+    height: auto;
+    padding: 1.5rem 0;
+  }
+  .servicos-inner {
+    padding: 2rem 1rem;
+  }
+  .servicos-heading {
+    font-size: 32px;
+    margin-bottom: 2rem;
+  }
+}

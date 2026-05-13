@@ -1,0 +1,326 @@
+/* ============================================================
+   Global Styles
+   ============================================================ */
+:host {
+  display: block;
+  min-height: 100dvh;
+  height: 100%;
+  background: linear-gradient(135deg, #0f0c1a 0%, #1a1631 100%);
+}
+
+/* ============================================================
+   Initial Page Container
+   ============================================================ */
+.initial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 1rem;
+  gap: 1.5rem;
+  max-width: 448px;
+  margin: 0 auto;
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
+}
+
+/* ============================================================
+   Logo Circle with Profile Image
+   ============================================================ */
+.logo-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+  background: rgba(124, 58, 237, 0.1);
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 2px solid #7c3aed;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+}
+
+/* ============================================================
+   Profile Text Section
+   ============================================================ */
+.profile-text-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-name-main {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.profile-bio-main {
+  font-size: 0.875rem;
+  margin: 0;
+  color: #c4b5fd;
+}
+
+.profile-tag-main {
+  font-size: 0.75rem;
+  margin: 0;
+  color: #a78bfa;
+}
+
+/* ============================================================
+   Links Container
+   ============================================================ */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* ============================================================
+   Neon Button Link
+   ============================================================ */
+.neon-btn-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1px solid #7c3aed;
+  background: transparent;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.4), inset 0 0 15px rgba(124, 58, 237, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.neon-btn-link:hover {
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.7), inset 0 0 25px rgba(124, 58, 237, 0.2);
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+.link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.link-icon svg {
+  width: 100%;
+  height: 100%;
+  color: #7c3aed;
+}
+
+.link-text {
+  flex: 1;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.initial-footer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.footer-note-text {
+  font-size: 0.875rem;
+  margin: 0;
+  color: #c4b5fd;
+}
+   Profile Header
+   /* ============================================================  */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-ring {
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.profile-name {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.25rem, 5vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.profile-bio {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.875rem, 3vw, 0.95rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.profile-tag {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   Links Navigation
+   ============================================================ */
+.links-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 0.875rem);
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 2.875rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: #e5e5e5;
+  text-decoration: none;
+  font: 600 0.95rem / 1 'DM Sans', sans-serif;
+  transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.link-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.link-btn:active {
+  transform: translateY(0);
+}
+
+.link-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  stroke-width: 2;
+}
+
+.link-text {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   Footer Note
+   ============================================================ */
+.footer-note {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-note p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   Mobile Responsive
+   ============================================================ */
+@media (max-width: 48rem) or (max-height: 46rem) {
+  .background-image {
+    background-image: var(--hero-image-mobile);
+    background-size: contain;
+    background-position: center center;
+    transform: none;
+    background-color: #090909;
+  }
+
+  .background-image::before {
+    opacity: 0;
+    filter: none;
+  }
+
+  .background-frost {
+    background:
+      radial-gradient(120% 68% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 62%),
+      linear-gradient(180deg, rgba(8, 8, 8, 0.38), rgba(8, 8, 8, 0.62));
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .layout {
+    padding: clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .links-panel {
+    max-width: 100%;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+  }
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 1ms !important;
+  }
+}

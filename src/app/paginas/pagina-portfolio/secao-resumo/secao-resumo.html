@@ -1,0 +1,106 @@
+﻿<section id="experiencia-section">
+    <div class="experiencia-container">
+        <p class="experiencia-label">Trajetória</p>
+        <h2 class="experiencia-title">Onde trabalhei</h2>
+
+        <div class="timeline-visual">
+            <div class="timeline-node">
+                <button
+                    class="timeline-dot"
+                    type="button"
+                    [class.active]="activeIndex === 0"
+                    (click)="selectCard(0)"
+                    aria-label="Abrir experiencia de Desenvolvedor Web Junior"
+                >
+                    📊
+                </button>
+                <div class="timeline-label">Desenvolvedor Web Júnior</div>
+            </div>
+            <div class="timeline-node">
+                <button
+                    class="timeline-dot"
+                    type="button"
+                    [class.active]="activeIndex === 1"
+                    (click)="selectCard(1)"
+                    aria-label="Abrir experiencia de Estagiario Front-end"
+                >
+                    👨‍💻
+                </button>
+                <div class="timeline-label">Estagiário Front-end</div>
+            </div>
+        </div>
+
+        <div class="progress-info">
+            <span>Progresso da carreira</span>
+            <span class="progress-counter">{{ activeCount }}/{{ totalCards }}</span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" [style.width.%]="progressPercent"></div>
+        </div>
+
+        <div class="deck-wrapper">
+            <div class="deck-container">
+                <div class="experiencia-card" [class.active]="activeIndex === 0">
+                    <div class="card-header-interactive" (click)="toggleCard(0)">
+                        <div>
+                            <h3 class="experiencia-job">Desenvolvedor Web Júnior</h3>
+                            <p class="experiencia-company">Data Grupo</p>
+                        </div>
+                        <span class="toggle-icon" aria-hidden="true">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="experiencia-meta">
+                            <div class="meta-item">📅 mai 2023 - abr 2025</div>
+                            <div class="meta-item">📍 Remoto</div>
+                        </div>
+                        <ul class="experiencia-list">
+                            <li>Desenvolvimento do SPA CMV com Angular 13+, TypeScript e SCSS</li>
+                            <li>Consumo de APIs RESTful com RxJS e autenticação JWT</li>
+                            <li>Otimização com Lazy Loading e Change Detection</li>
+                            <li>Atuação em Scrum e versionamento com Git Flow no Bitbucket</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Angular 13+</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">RxJS</span>
+                            <span class="tech-badge">SCSS</span>
+                            <span class="tech-badge">API REST</span>
+                            <span class="tech-badge">JWT</span>
+                            <span class="tech-badge">Git Flow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experiencia-card" [class.active]="activeIndex === 1">
+                    <div class="card-header-interactive" (click)="toggleCard(1)">
+                        <div>
+                            <h3 class="experiencia-job">Estagiário Desenvolvedor Front-end</h3>
+                            <p class="experiencia-company">Data Grupo</p>
+                        </div>
+                        <span class="toggle-icon" aria-hidden="true">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="experiencia-meta">
+                            <div class="meta-item">📅 jul 2022 - mai 2023</div>
+                            <div class="meta-item">📍 Híbrido</div>
+                        </div>
+                        <ul class="experiencia-list">
+                            <li>Projeto Minha Coleta de ponta a ponta: requisitos, implementação e implantação</li>
+                            <li>Angular 13, SCSS, Bootstrap, RxJS e Clean Code</li>
+                            <li>Implementação de guards, pipes e integração de APIs via Swagger</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Angular 13</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">RxJS</span>
+                            <span class="tech-badge">SCSS</span>
+                            <span class="tech-badge">Guards &amp; Pipes</span>
+                            <span class="tech-badge">Swagger</span>
+                            <span class="tech-badge">Clean Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

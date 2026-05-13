@@ -26,6 +26,11 @@
             "assets": [
               {
                 "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
                 "input": "public"
               }
             ],
@@ -35,7 +40,11 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": [
+                "localhost",
+                "127.0.0.1",
+                "192.168.1.12"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts"
@@ -67,6 +76,15 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "host": "0.0.0.0",
+            "port": 4200,
+            "allowedHosts": [
+              "localhost",
+              "127.0.0.1",
+              "192.168.1.12"
+            ]
+          },
           "configurations": {
             "production": {
               "buildTarget": "bruno-ferreira:build:production"

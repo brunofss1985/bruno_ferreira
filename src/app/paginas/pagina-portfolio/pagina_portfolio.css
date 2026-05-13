@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-shell {
+  --hero-image: url('/assets/img/login2.webp');
+  --hero-image-mobile: url('/assets/img/login2 copy.jpg');
+  --accent: #76e6c7;
+  position: relative;
+  min-height: 100dvh;
+  overflow-x: clip;
+  background: #2a2a2a;
+}
+
+.layout {
+  --sidebar-width: 15%;
+  --layout-gap: 0.85rem;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: minmax(0, var(--sidebar-width)) minmax(0, 1fr);
+  align-items: start;
+}
+
+.content-flow {
+  padding-left: 0;
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+@media (max-width: 64rem) {
+  .layout {
+    --sidebar-width: 18.75%;
+  }
+
+  .content-flow {
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 52rem) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-flow {
+    padding-left: 0;
+    width: 100%;
+  }
+}

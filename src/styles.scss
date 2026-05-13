@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Syne:wght@400..800&display=swap');
+
+:root {
+	--bg: #071427;
+	--bg-soft: #0d1d37;
+	--text: #eaf2ff;
+	--muted: #a9b9d3;
+
+	--card: rgba(255, 255, 255, 0.06);
+	--border: rgba(255, 255, 255, 0.1);
+
+	--blue: #2f7cff;
+	--blue2: #61a0ff;
+
+	--radius-lg: 18px;
+	--radius-md: 14px;
+
+	--shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.28);
+	--shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.36);
+
+	--font-head: 'Syne', 'Avenir Next', 'Segoe UI', sans-serif;
+	--font-body: 'Manrope', 'Segoe UI', sans-serif;
+
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg: #eef4ff;
+		--bg-soft: #dde9ff;
+		--text: #0d1a30;
+		--muted: #3f5275;
+		--card: rgba(255, 255, 255, 0.84);
+		--border: rgba(13, 28, 56, 0.1);
+		--shadow-sm: 0 8px 22px rgba(33, 56, 99, 0.12);
+		--shadow-lg: 0 18px 45px rgba(33, 56, 99, 0.18);
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	min-height: 100%;
+	height: 100%;
+}
+
+app-root {
+	display: block;
+	min-height: 100%;
+}
+
+body {
+	font-family: var(--font-body);
+	color: var(--text);
+	background: #090909;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}

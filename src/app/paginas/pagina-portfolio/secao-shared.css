@@ -1,0 +1,161 @@
+.glass-panel {
+  width: 100%;
+  border: 0px solid rgba(255, 255, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01)),
+    rgba(24, 24, 24, 0.58);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 1.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: clamp(0.9rem, 2.2vw, 1.25rem);
+}
+
+.secao p,
+.secao li {
+  color: rgba(255, 255, 255, 0.86);
+  font: 500 clamp(0.86rem, 1.4vw, 0.95rem) / 1.6 var(--font-body);
+}
+
+.secao-kicker {
+  margin: 0 0 0.3rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font: 700 0.7rem / 1.2 var(--font-body);
+}
+
+.secao h3 {
+  margin: 0;
+  color: #fff;
+  letter-spacing: -0.01em;
+  font: 700 clamp(1.2rem, 2.6vw, 1.5rem) / 1.2 var(--font-head);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.38rem;
+}
+
+.secao h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3.2rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), rgba(118, 230, 199, 0));
+}
+
+.subcard {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.8rem;
+  transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
+}
+
+.subcard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(118, 230, 199, 0.45);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.subcard h4 {
+  margin: 0;
+  color: #fff;
+  font: 700 0.95rem / 1.2 var(--font-head);
+}
+
+.subcard ul {
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.subcard li {
+  position: relative;
+  padding-left: 0.82rem;
+}
+
+.subcard li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.servicos-grid,
+.colunas-3,
+.projetos-grid,
+.contatos-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.servicos-grid,
+.projetos-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.colunas-3,
+.contatos-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.timeline {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.projeto .stack,
+.timeline .meta {
+  color: rgba(255, 255, 255, 0.66);
+  font: 600 0.76rem / 1.45 var(--font-body);
+}
+
+.contato {
+  display: grid;
+  gap: 0.2rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem;
+  transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
+}
+
+.contato:hover {
+  transform: translateY(-2px);
+  border-color: rgba(118, 230, 199, 0.55);
+  background: rgba(118, 230, 199, 0.08);
+}
+
+.contato strong {
+  color: #fff;
+  font: 700 0.9rem / 1.2 var(--font-head);
+}
+
+.contato span {
+  color: rgba(255, 255, 255, 0.8);
+  font: 500 0.82rem / 1.35 var(--font-body);
+}
+
+.rodape p {
+  margin: 0.2rem 0;
+  color: rgba(255, 255, 255, 0.82);
+  font: 500 0.8rem / 1.4 var(--font-body);
+}
+
+@media (max-width: 64rem) {
+  .servicos-grid,
+  .colunas-3,
+  .projetos-grid,
+  .contatos-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,69 @@
+<div id="portfolio-section">
+  <div class="portfolio-container">
+    <p class="portfolio-label">Projetos</p>
+    <h2 class="portfolio-title">Meus Projetos</h2>
+
+    <!-- Carousel Container -->
+    <div class="carousel-wrapper">
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <!-- Projects -->
+          @for (project of projects; track project.title; let i = $index) {
+            <div
+              class="project-card"
+              [class.project-card-featured]="isFeaturedCard(i)"
+            >
+            <div class="project-video-container">
+              <div class="video-placeholder">🎬</div>
+              <video
+                class="project-video"
+                [src]="project.videoSrc"
+                muted
+                playsinline
+              ></video>
+            </div>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tech">
+              @for (tech of project.tech; track tech) {
+                <span class="tech-badge">
+                  {{ tech }}
+                </span>
+              }
+            </div>
+            <div class="project-flap" aria-hidden="true"></div>
+          </div>
+          }
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button class="carousel-btn carousel-btn-prev" aria-label="Previous">
+        ←
+      </button>
+      <button class="carousel-btn carousel-btn-next" aria-label="Next">
+        →
+      </button>
+
+      <div class="carousel-pagination" aria-label="Navegação por páginas">
+        @for (page of getPaginationIndexes(); track page) {
+          <button
+            type="button"
+            class="pagination-dot"
+            [class.is-active]="isPaginationActive(page)"
+            (click)="goToSlide(page)"
+            [attr.aria-label]="'Ir para página ' + (page + 1)"
+          ></button>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div id="video-modal">
+  <video
+    id="modal-video"
+    controls
+  ></video>
+</div>
