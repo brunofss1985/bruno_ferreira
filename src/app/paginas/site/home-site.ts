@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SiteFeaturesComponent } from './features/site-features';
+import { SiteServicesComponent } from './services/site-services';
+import { SiteResultsComponent } from './results/site-results';
 import { SiteFooterComponent } from './footer/site-footer';
 import { SiteHeaderComponent } from './header/site-header';
 import { SiteHeroComponent } from './hero/site-hero';
-import { SitePortfolioComponent } from './portfolio/site-portfolio';
-import { SiteTableComponent } from './table/site-table';
+import { SiteProjectsComponent } from './projects/site-projects';
+import { SiteProcessComponent } from './process/site-process';
 
 @Component({
   selector: 'app-home-site',
@@ -13,9 +14,10 @@ import { SiteTableComponent } from './table/site-table';
     CommonModule,
     SiteHeaderComponent,
     SiteHeroComponent,
-    SiteFeaturesComponent,
-    SitePortfolioComponent,
-    SiteTableComponent,
+    SiteServicesComponent,
+    SiteResultsComponent,
+    SiteProjectsComponent,
+    SiteProcessComponent,
     SiteFooterComponent
   ],
   templateUrl: './home-site.html',
@@ -24,7 +26,7 @@ import { SiteTableComponent } from './table/site-table';
 export class HomeSiteComponent {
   protected readonly whatsappUrl = 'https://wa.me/5500000000000?text=Ol%C3%A1%2C%20quero%20solicitar%20um%20or%C3%A7amento.';
 
-  portfolioItems = [
+  projectItems = [
     {
       title: 'E-commerce Fashion',
       category: 'Web App SaaS',

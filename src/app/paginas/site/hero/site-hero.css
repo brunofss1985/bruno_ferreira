@@ -1,7 +1,7 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  min-height: calc(85 * min(var(--vh, 1vh), 1vh));
+  min-height: calc(110dvh - var(--site-header-height, 0px));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +48,7 @@
   margin-bottom: 1.5rem;
 }
 
-.hero-content h1 {
+.hero-content h2 {
   font-size: clamp(2rem, 5.5vw, 3.5rem);
   font-weight: 900;
   line-height: 1.1;

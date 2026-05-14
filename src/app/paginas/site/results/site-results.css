@@ -1,0 +1,112 @@
+.results-section {
+  width: 100%;
+  margin: 0;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 5vw, 3rem);
+  color: #fff;
+}
+
+.section-kicker {
+  color: var(--accent, #76e6c7);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.results-section > h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-lead {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 70ch;
+  margin-bottom: 3rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  /* background: var(--bg-card, rgba(255, 255, 255, 0.04)); */
+  /* border-radius: 24px; */
+  /* border: 1px solid var(--border-glass, rgba(255, 255, 255, 0.08)); */
+  padding: clamp(1.5rem, 5vw, 3rem);
+  backdrop-filter: blur(10px);
+  animation: riseIn 800ms ease both;
+}
+
+@media (max-width: 850px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.results-card {
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.results-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.results-card h3::before {
+  content: '';
+  width: 4px;
+  height: 22px;
+  background: var(--accent, #76e6c7);
+  border-radius: 4px;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.results-list li {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.9rem 1.2rem 0.9rem 3rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.results-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 1.2rem;
+  color: var(--accent, #76e6c7);
+  font-weight: 700;
+}
+
+.results-list li:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(6px);
+}
+
+.results-stats li {
+  font-weight: 600;
+  color: #fff;
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

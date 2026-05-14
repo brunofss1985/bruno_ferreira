@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-interface PortfolioItem {
+interface ProjectItem {
   title: string;
   category: string;
   image: string;
@@ -9,12 +9,12 @@ interface PortfolioItem {
 }
 
 @Component({
-  selector: 'app-site-portfolio',
+  selector: 'app-site-projects',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './site-portfolio.html',
-  styleUrl: './site-portfolio.css'
+  templateUrl: './site-projects.html',
+  styleUrl: './site-projects.css'
 })
-export class SitePortfolioComponent {
-  @Input() portfolioItems: PortfolioItem[] = [];
+export class SiteProjectsComponent {
+  @Input() projectItems: ProjectItem[] = [];
 }
