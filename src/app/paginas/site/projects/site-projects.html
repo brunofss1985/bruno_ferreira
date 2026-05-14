@@ -3,46 +3,42 @@
   <h2>Projetos em Destaque</h2>
   <p class="section-lead">Selecao de entregas com foco em design, velocidade e resultados reais.</p>
 
-  <div class="projects-grid">
-    @if (projectItems[0]) {
-      <div class="project-item wide">
-        <img [src]="projectItems[0].image" [alt]="projectItems[0].title" loading="lazy">
-        <div class="project-overlay">
-          <span>{{ projectItems[0].title }} • {{ projectItems[0].highlight }}</span>
-        </div>
+  <div class="projects-carousel">
+    <div class="projects-viewport">
+      <div class="projects-track">
+        @for (project of projectItems; track project.title; let i = $index) {
+          <article class="projects-card" [class.projects-card-featured]="isFeaturedCard(i)">
+            <div class="projects-media">
+              <img [src]="project.image" [alt]="project.title" loading="lazy">
+              <div class="projects-media-overlay"></div>
+            </div>
+            <h3 class="projects-title">{{ project.title }}</h3>
+            <p class="projects-description">{{ project.category }}</p>
+            <p class="projects-highlight">{{ project.highlight }}</p>
+          </article>
+        }
       </div>
-    }
-    @if (projectItems[1]) {
-      <div class="project-item">
-        <img [src]="projectItems[1].image" [alt]="projectItems[1].title" loading="lazy">
-        <div class="project-overlay">
-          <span>{{ projectItems[1].title }} • {{ projectItems[1].highlight }}</span>
-        </div>
-      </div>
-    }
-    @if (projectItems[2]) {
-      <div class="project-item">
-        <img [src]="projectItems[2].image" [alt]="projectItems[2].title" loading="lazy">
-        <div class="project-overlay">
-          <span>{{ projectItems[2].title }} • {{ projectItems[2].highlight }}</span>
-        </div>
-      </div>
-    }
-    @if (projectItems[3]) {
-      <div class="project-item">
-        <img [src]="projectItems[3].image" [alt]="projectItems[3].title" loading="lazy">
-        <div class="project-overlay">
-          <span>{{ projectItems[3].title }} • {{ projectItems[3].highlight }}</span>
-        </div>
-      </div>
-    }
-    @if (projectItems[4]) {
-      <div class="project-item">
-        <img [src]="projectItems[4].image" [alt]="projectItems[4].title" loading="lazy">
-        <div class="project-overlay">
-          <span>{{ projectItems[4].title }} • {{ projectItems[4].highlight }}</span>
-        </div>
-      </div>
-    }
+    </div>
+
+    <div class="projects-controls">
+      <button class="projects-btn" type="button" aria-label="Anterior" (click)="prevSlide()">
+        ←
+      </button>
+      <button class="projects-btn" type="button" aria-label="Proximo" (click)="nextSlide()">
+        →
+      </button>
+    </div>
+
+    <div class="projects-pagination" aria-label="Navegacao por paginas">
+      @for (page of getPaginationIndexes(); track page) {
+        <button
+          type="button"
+          class="projects-dot"
+          [class.is-active]="isPaginationActive(page)"
+          (click)="goToSlide(page)"
+          [attr.aria-label]="'Ir para pagina ' + (page + 1)"
+        ></button>
+      }
+    </div>
   </div>
 </section>
