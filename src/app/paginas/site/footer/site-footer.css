@@ -30,7 +30,7 @@
 }
 
 .footer-col a:hover {
-  color: #f97316;
+  color: var(--accent, #76e6c7);
 }
 
 .footer-col ul {
@@ -62,8 +62,8 @@
 }
 
 .social-circle:hover {
-  border-color: #f97316;
-  color: #f97316;
+  border-color: var(--accent, #76e6c7);
+  color: var(--accent, #76e6c7);
 }
 
 .footer-bottom {
@@ -79,7 +79,7 @@
 
 /* Button used in footer */
 .btn-primary {
-  background: #f97316;
+  background: var(--accent, #f97316);
   color: #fff;
   padding: 0.85rem 2rem;
   border-radius: 8px;

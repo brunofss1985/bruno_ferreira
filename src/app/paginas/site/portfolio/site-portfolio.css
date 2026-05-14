@@ -10,6 +10,7 @@
   font-weight: 700;
   color: #fff;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .portfolio-grid {
@@ -22,8 +23,11 @@
 .port-item {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 18px;
   aspect-ratio: 16 / 10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .port-item.wide {
@@ -39,6 +43,11 @@
 
 .port-item:hover img {
   transform: scale(1.05);
+}
+
+.port-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
 }
 
 .port-overlay {

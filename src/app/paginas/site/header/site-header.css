@@ -27,7 +27,7 @@
 }
 
 .logo-text span {
-  color: #f97316;
+  color: var(--accent, #f97316);
 }
 
 .logo-text:hover {
@@ -53,7 +53,7 @@
 }
 
 .nav-cta-btn {
-  background: #f97316;
+  background: var(--accent, #f97316);
   color: #fff;
   padding: 0.55rem 1.3rem;
   border-radius: 6px;

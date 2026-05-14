@@ -7,11 +7,13 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  background: #000000;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
+  
 }
 
 .hero-bg img {
@@ -25,7 +27,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(13, 13, 13, 0.4) 0%, rgba(13, 13, 13, 0.95) 100%);
+    background: linear-gradient(180deg, #0d0d0d66, #0d0d0df2);
+
 }
 
 .hero-content {
@@ -33,10 +36,11 @@
   z-index: 2;
   max-width: 750px;
   padding: 2rem clamp(1rem, 5vw, 3rem);
+  animation: fadeUp 800ms ease both;
 }
 
 .hero-eyebrow {
-  color: #f97316;
+  color: var(--accent, #76e6c7);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -53,7 +57,7 @@
 }
 
 .hero-desc {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   line-height: 1.7;
   max-width: 55ch;
@@ -69,7 +73,7 @@
 
 /* Buttons */
 .btn-primary {
-  background: #f97316;
+  background: var(--accent, #76e6c7);
   color: #fff;
   padding: 0.85rem 2rem;
   border-radius: 8px;
@@ -80,6 +84,7 @@
   border: none;
   cursor: pointer;
   display: inline-block;
+  box-shadow: 0 12px 28px #f9731640;
 }
 
 .btn-primary:hover {
@@ -101,6 +106,17 @@
 }
 
 .btn-outline:hover {
-  border-color: #f97316;
-  color: #f97316;
+  border-color: var(--accent, #f97316);
+  color: var(--accent, #f97316);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

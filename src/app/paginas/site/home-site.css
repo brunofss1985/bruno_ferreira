@@ -1,17 +1,36 @@
-/* :host {
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+:host {
   display: block;
   min-height: 100dvh;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.sites-page {
+  --accent: #f97316;
+  --bg: #000000;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --text: rgba(255, 255, 255, 0.95);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100dvh;
 }
 
-.sites-page {
-  color: #fff;
-} */
+.sites-page h1,
+.sites-page h2,
+.sites-page h3,
+.sites-page h4 {
+  font-family: var(--font-head);
+  letter-spacing: -0.02em;
+}
+
+.sites-page * {
+  box-sizing: border-box;
+}
 
 /* Responsividade */
 @media (max-width: 1024px) {
