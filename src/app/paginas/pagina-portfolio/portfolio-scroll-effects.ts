@@ -11,6 +11,9 @@ export class PortfolioScrollEffectsDirective implements AfterViewInit, OnDestroy
   private textTween?: gsap.core.Tween;
   private aboutRevealTween?: gsap.core.Tween;
   private aboutCurtainTrigger?: ScrollTrigger;
+  private servicesTween?: gsap.core.Tween;
+  private servicesTrigger?: ScrollTrigger;
+  private servicesMedia?: gsap.MatchMedia;
 
   ngAfterViewInit(): void {
     if (typeof window === 'undefined') {
@@ -23,6 +26,8 @@ export class PortfolioScrollEffectsDirective implements AfterViewInit, OnDestroy
     const bg = document.querySelector('.hero-parallax-bg');
     const aboutSection = document.getElementById('sobre');
     const aboutCard = document.querySelector<HTMLElement>('#sobre .about-inner');
+    const servicesSection = document.getElementById('servicos-section');
+    const serviceCards = gsap.utils.toArray<HTMLElement>('#servicos-section .service-card');
 
     if (hero && bg) {
       this.bgTween = gsap.fromTo(
@@ -78,14 +83,93 @@ export class PortfolioScrollEffectsDirective implements AfterViewInit, OnDestroy
         }
       });
     }
+
+    if (servicesSection && serviceCards.length > 0) {
+      this.servicesMedia = gsap.matchMedia();
+
+      this.servicesMedia.add('(min-width: 64.001rem)', () => {
+        gsap.set(serviceCards, {
+          autoAlpha: 0,
+          x: (index) => (index % 2 === 0 ? -80 : 80)
+        });
+
+        this.servicesTween = gsap.to(serviceCards, {
+          autoAlpha: 1,
+          x: 0,
+          duration: 0.45,
+          ease: 'power2.out',
+          stagger: 0.08,
+          paused: true
+        });
+
+        this.servicesTrigger = ScrollTrigger.create({
+          trigger: servicesSection,
+          start: 'top bottom',
+          end: 'bottom top',
+          onUpdate: (self) => {
+            if (self.progress >= 0.4) {
+              this.servicesTween?.play();
+            } else {
+              this.servicesTween?.reverse();
+            }
+          }
+        });
+
+        return () => {
+          this.servicesTrigger?.kill();
+          this.servicesTrigger = undefined;
+          this.servicesTween?.kill();
+          this.servicesTween = undefined;
+        };
+      });
+
+      this.servicesMedia.add('(max-width: 64rem)', () => {
+        gsap.set(serviceCards, {
+          autoAlpha: 0,
+          x: (index) => (index < 2 ? -80 : 80)
+        });
+
+        this.servicesTween = gsap.to(serviceCards, {
+          autoAlpha: 1,
+          x: 0,
+          duration: 0.45,
+          ease: 'power2.out',
+          stagger: 0.08,
+          paused: true
+        });
+
+        this.servicesTrigger = ScrollTrigger.create({
+          trigger: servicesSection,
+          start: 'top bottom',
+          end: 'bottom top',
+          onUpdate: (self) => {
+            if (self.progress >= 0.4) {
+              this.servicesTween?.play();
+            } else {
+              this.servicesTween?.reverse();
+            }
+          }
+        });
+
+        return () => {
+          this.servicesTrigger?.kill();
+          this.servicesTrigger = undefined;
+          this.servicesTween?.kill();
+          this.servicesTween = undefined;
+        };
+      });
+    }
   }
 
   ngOnDestroy(): void {
     this.aboutRevealTween?.scrollTrigger?.kill();
     this.aboutCurtainTrigger?.kill();
+    this.servicesTrigger?.kill();
     this.bgTween?.scrollTrigger?.kill();
     this.textTween?.scrollTrigger?.kill();
     this.aboutRevealTween?.kill();
+    this.servicesTween?.kill();
+    this.servicesMedia?.revert();
     this.bgTween?.kill();
     this.textTween?.kill();
   }
