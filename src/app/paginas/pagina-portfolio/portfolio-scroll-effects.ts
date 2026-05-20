@@ -10,6 +10,7 @@ export class PortfolioScrollEffectsDirective implements AfterViewInit, OnDestroy
   private bgTween?: gsap.core.Tween;
   private textTween?: gsap.core.Tween;
   private aboutRevealTween?: gsap.core.Tween;
+  private aboutCurtainTrigger?: ScrollTrigger;
 
   ngAfterViewInit(): void {
     if (typeof window === 'undefined') {
@@ -21,6 +22,7 @@ export class PortfolioScrollEffectsDirective implements AfterViewInit, OnDestroy
     const hero = document.getElementById('home');
     const bg = document.querySelector('.hero-parallax-bg');
     const aboutSection = document.getElementById('sobre');
+    const aboutCard = document.querySelector<HTMLElement>('#sobre .about-inner');
 
     if (hero && bg) {
       this.bgTween = gsap.fromTo(
@@ -59,10 +61,28 @@ export class PortfolioScrollEffectsDirective implements AfterViewInit, OnDestroy
         }
       );
     }
+
+    if (aboutSection && aboutCard) {
+      this.aboutCurtainTrigger = ScrollTrigger.create({
+        trigger: aboutSection,
+        start: 'top bottom',
+        end: 'bottom top',
+        onUpdate: (self) => {
+          aboutCard.classList.toggle('is-revealed', self.progress >= 0.4);
+        },
+        onLeave: () => {
+          aboutCard.classList.remove('is-revealed');
+        },
+        onLeaveBack: () => {
+          aboutCard.classList.remove('is-revealed');
+        }
+      });
+    }
   }
 
   ngOnDestroy(): void {
     this.aboutRevealTween?.scrollTrigger?.kill();
+    this.aboutCurtainTrigger?.kill();
     this.bgTween?.scrollTrigger?.kill();
     this.textTween?.scrollTrigger?.kill();
     this.aboutRevealTween?.kill();
