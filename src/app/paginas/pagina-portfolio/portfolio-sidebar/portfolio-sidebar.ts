@@ -10,7 +10,7 @@ import { ScrollNavigationService } from '../../../services/scroll-navigation.ser
   styleUrls: ['./portfolio-sidebar.css']
 })
 export class PortfolioSidebarComponent implements OnInit {
-  isSidebarOpen = true;
+  isSidebarOpen = false;
   activeSection = 'home';
   private readonly scrollNav = inject(ScrollNavigationService);
   private readonly router = inject(Router);
