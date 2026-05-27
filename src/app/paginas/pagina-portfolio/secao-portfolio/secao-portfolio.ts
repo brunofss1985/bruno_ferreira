@@ -186,11 +186,12 @@ export class SecaoPortfolioComponent implements AfterViewInit, OnDestroy {
       return 3;
     }
 
-    const viewport = window.innerWidth;
-    if (viewport <= 768) {
+    const viewportEl = document.querySelector('.carousel-viewport') as HTMLElement | null;
+    const viewportWidth = viewportEl?.clientWidth ?? window.innerWidth;
+    if (viewportWidth <= 768) {
       return 1;
     }
-    if (viewport <= 1024) {
+    if (viewportWidth <= 1024) {
       return 2;
     }
     return 3;
