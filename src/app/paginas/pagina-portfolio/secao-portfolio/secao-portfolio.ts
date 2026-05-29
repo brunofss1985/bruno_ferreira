@@ -26,7 +26,7 @@ export class SecaoPortfolioComponent implements AfterViewInit, OnDestroy {
       description:
         'Plataforma web para rotinas médicas com agenda, inventário, atendimentos, faturamento, créditos e prescrições em PDF. Desenvolvido com Vite, React, TypeScript, Tailwind CSS, shadcn-ui e TanStack Query.',
       tech: ['React', 'TypeScript', 'Tailwind CSS'],
-      videoSrc: 'assets/img/videos/20260505-2224-39.5713917.mp4',
+      videoSrc: '',
       index: 1,
     },
     {
