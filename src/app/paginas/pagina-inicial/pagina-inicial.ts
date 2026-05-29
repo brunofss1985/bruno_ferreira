@@ -33,7 +33,7 @@ export class PaginaInicialComponent {
     nome: 'Bruno Ferreira',
     bio: 'Fullstack Developer | Especialista em Interfaces Modernas',
     tag: 'dev.bruno.ferreira',
-    nota: '💡 Vamos conversar sobre seu próximo projeto?'
+    nota: ''
   };
 
   protected readonly linksRapidos: LinkRapido[] = [
@@ -46,7 +46,7 @@ export class PaginaInicialComponent {
       icon: 'briefcase'
     },
     {
-      label: 'Site',
+      label: 'Site (em breve)',
       url: '/sites',
       ariaLabel: 'Abrir página de sites e serviços',
       icon: 'globe'
@@ -58,9 +58,9 @@ export class PaginaInicialComponent {
       icon: 'linkedin'
     },
     {
-      label: 'GitHub',
-      url: 'https://github.com/brunofss1985',
-      ariaLabel: 'Abrir perfil no GitHub',
+      label: 'GitHub (em breve)',
+      url: '/em-breve',
+      ariaLabel: 'Abrir pagina de em breve',
       icon: 'github'
     },
     {

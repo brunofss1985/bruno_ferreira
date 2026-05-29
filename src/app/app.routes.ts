@@ -4,6 +4,7 @@ import { PaginaInicialComponent } from './paginas/pagina-inicial/pagina-inicial'
 export const routes: Routes = [
 	{ path: '', component: PaginaInicialComponent },
 	{ path: 'portfolio', loadComponent: () => import('./paginas/pagina-portfolio/pagina-portfolio').then((m) => m.PaginaPortfolioComponent) },
-	{ path: 'sites', loadComponent: () => import('./paginas/site/home-site').then((m) => m.HomeSiteComponent) },
+	{ path: 'em-breve', loadComponent: () => import('./paginas/em-breve/em-breve').then((m) => m.EmBreveComponent) },
+	{ path: 'sites', loadComponent: () => import('./paginas/em-breve/em-breve').then((m) => m.EmBreveComponent) },
 	{ path: '**', redirectTo: '' },
 ];
